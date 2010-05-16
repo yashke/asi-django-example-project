@@ -3,7 +3,7 @@
 {% block content %}
     <h2>Notki</h2>
     {% for post in posts %}
-        <h3>{{ post.title }}</h3>
+        <h3><a href="{% url blog:show post.pk %}">{{ post.title }}</a></h3>
         <div>{{ post.content }}</div>
     {% empty %}
         <h3>Brak wpisów.</h3>
