@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Notki</h2>
+    {% for post in posts %}
+        <h3>{{ post.title }}</h3>
+        <div>{{ post.content }}</div>
+    {% empty %}
+        <h3>Brak wpisów.</h3>
+    {% endfor %}
+{% endblock %}
