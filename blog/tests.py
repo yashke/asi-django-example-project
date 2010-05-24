@@ -6,18 +6,15 @@ Replace these with more appropriate tests for your application.
 """
 
 from django.test import TestCase
+from models import Post
 
-class SimpleTest(TestCase):
-    def test_basic_addition(self):
-        """
-        Tests that 1 + 1 always equals 2.
-        """
-        self.failUnlessEqual(1 + 1, 2)
+class PostStrTest(TestCase):
+    def setUp(self):
+        self.post = Post()
 
-__test__ = {"doctest": """
-Another way to test that 1 + 1 is equal to 2.
+    def testWithTitle(self):
+        self.post.title = "kaka"
+        self.assertEqual(str(self.post), "Post: kaka")
 
->>> 1 + 1 == 2
-True
-"""}
-
+    def testWithoutTitle(self):
+        self.assertEqual(str(self.post), "Post: untitled")

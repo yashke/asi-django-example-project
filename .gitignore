@@ -1,2 +1,4 @@
 *.pyc
 default.db
+*.swp
+*.swo
